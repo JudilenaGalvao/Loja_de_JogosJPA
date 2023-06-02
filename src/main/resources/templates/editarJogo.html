@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Jogo</title>
+    <link href="css/editar.css" rel="stylesheet" />
+</head>
+<body>
+  <hr/>
+  <hr/>
+<h1>Edição de Jogo</h1>
+  <hr/>
+  <hr/>
+<form method="post" th:action="@{/doCadastrarJogo}" th:object="${jogo}" enctype="multipart/form-data">
+
+   </br></br> </br></br>
+    <input type="hidden" th:field="*{id}"><br />
+    <center><input type="text" th:field="*{nome}" Placeholder="Nome"><br /></center>
+    <p th:if = "${#fields.hasErrors('nome')}" th:erros = "*{nome}"></p>
+
+    <center><input type="text" th:field="*{classificacao}" Placeholder="Classificacao"><br /></center>
+    <p th:if = "${#fields.hasErrors('classificacao')}" th:erros = "*{classificacao}"></p>
+
+    <center><input type="text" th:field="*{preco}" Placeholder="Preco"> <br /></center>
+    <p th:if = "${#fields.hasErrors('preco')}" th:erros = "*{preco}"></p>
+
+    <center><input type="text" th:field="*{desenvolvedores}" Placeholder="Desenvolvedores"> <br /></center>
+    <p th:if = "${#fields.hasErrors('desenvolvedores')}" th:erros = "*{desenvolvedores}"></p>
+
+    <center><input type="text" th:field="*{genero}" Placeholder="Genero"> <br /></center>
+    <p th:if = "${#fields.hasErrors('genero')}" th:erros = "*{genero}"></p>
+
+    <center><input type="text" th:field="*{dataDeLancamento}" Placeholder="Data de Lancamento"> <br /></center>
+    <p th:if = "${#fields.hasErrors('dataDeLancamento')}" th:erros = "*{dataDeLancamento}"></p>
+
+    <center><input type="text" th:field="*{plataformas}" Placeholder="Plataformas"> <br /></center>
+    <p th:if = "${#fields.hasErrors('plataformas')}" th:erros = "*{plataformas}"></p>
+
+    <center><input type="file" name="file" Placeholder="Image"> <br /><br /></center>
+    <input type="hidden" th:field="*{imageUri}"> 
+    <p th:if = "${#fields.hasErrors('imageUri')}" th:erros = "*{imageUri}"></p>
+     
+    <center><button type="submit">Editar</button></center>
+    </br></br> </br></br> </br></br>
+    <hr/>
+    <hr/>
+</form>
+</body>
+</html>

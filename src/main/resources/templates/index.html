@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Rōju</title>
+</head>
+<body>
+    <h1>Jogos:</h1>
+
+    <!--<h2>Cadastre <a th:href="@{cadastrarUsuario}">aqui</a> </h2> -->
+    
+    
+    <table>
+        <tr th:each="jogo: ${jogos}" th:if="${jogo.deleted == null}">
+            <td th:text="${jogo.id}"></td>
+            <td th:text="${jogo.nome}"></td>
+            <td th:text="${jogo.classificacao}"></td>
+            <td>
+                <img th:src="@{${jogo.imageUri}}" alt="Imagem do Jogo" width="200" height="200" />
+            </td>
+
+            <td><a th:href="@{'adicionarCarrinho/'+${jogo.id}}">Adicionar ao Carrinho</a></td>
+            <td><a th:href="@{'verCarrinho'}">Ver Carrinho</a></td>
+            <td><a th:href="@{'finalizarCompra'}">Finalizar Compra</a></td>
+        </tr>
+    </table>
+</body>
+</html>

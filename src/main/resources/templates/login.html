@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/login}" method="post">
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <label for="isAdmin">Administrador:</label>
+      <input type="checkbox" id="isAdmin" name="isAdmin">
+  <button type="submit">Entrar</button>
+</form>
+</body>
+</html>

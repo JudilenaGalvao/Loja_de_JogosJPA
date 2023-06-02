@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuario</title>
+</head>
+<body>
+<h1> Página de Edição de Usuários</h1>
+<form method="post" th:action="@{/doSalvarUsuario}" th:object="${usuario}">
+
+    Id: <input type="text" th:field="*{id}"><br />
+    Nome: <input type="text" th:field="*{nome}"><br />
+    Login: <input type="text" th:field="*{login}"><br />
+    Senha: <input type="password" th:field="*{senha}"> <br />
+    Admin:
+    <input type="radio" th:field="*{isAdmin}" value="true"> Sim
+    <input type="radio" th:field="*{isAdmin}" value="false" th:checked="true"> Não
+    <br />
+    <button type="submit">Editar</button>
+</form>
+</body>
+</html>
